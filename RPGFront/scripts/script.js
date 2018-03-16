@@ -1,3 +1,5 @@
+var name;
+var hp;
 var atkPoints;
 var defPoints;
 var totalPoints;
@@ -24,6 +26,8 @@ $(document).ready(function() {
     creation();
   })
   function creation() {
+    name = document.getElementById('name').value;
+    hp = document.getElementById('hp').value;
     atkPoints = document.getElementById('atk').value;
     defPoints = document.getElementById('def').value;
     totalPoints = parseInt(atkPoints) + parseInt(defPoints);
@@ -31,7 +35,10 @@ $(document).ready(function() {
     if (totalPoints > 150) {
       alert('The amount of points in Attack and Defense cannot excess 150 points ! Please verify your configuration.');
     } else {
-
+      $.post('http://192.168.33.32:3000/create', {'name': name, 'hp': hp, 'atkPoints': atkPoints, 'defPoints': defPoints})
+      .done(function(data) {
+        $('body').html(data);
+      });
     }
     debugger;
   }
