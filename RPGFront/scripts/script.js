@@ -37,7 +37,8 @@ $(document).ready(function() {
     } else {
       $.post('http://192.168.33.32:3000/create', {'name': name, 'hp': hp, 'atkPoints': atkPoints, 'defPoints': defPoints})
       .done(function(data) {
-        $('body').html(data);
+        console.log(data);
+        $('body').html("Name : " + data.name + ' ' + "HP : " + data.hp + ' ' + "Attack Points : " + data.atkPoints + ' ' + "Defense Points : " + data.defPoints);
       });
     }
     debugger;

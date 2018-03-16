@@ -5,19 +5,19 @@ app.use(express.urlencoded({
   extended: true
 }));
 class Hero {
-  constructor(name, hp, attackPoints, defPoints) {
+  constructor(name, hp, atkPoints, defPoints) {
     this.name = name;
     this.hp = hp;
-    this.attackPoints;
-    this.magicPoints = defPoints;
+    this.atkPoints = atkPoints;
+    this.defPoints = defPoints;
   }
 }
 app.get('/init', function (req, res) {
   res.send(true);
 });
 app.post('/create', function (req, res) {
-  console.log(req.body);
   var newHero = new Hero(req.body.name, req.body.hp, req.body.atkPoints, req.body.defPoints);
   console.log(newHero);
+  res.send(newHero);
 });
 app.listen(3000, () => console.log('Example app listening on port 3000!'));
