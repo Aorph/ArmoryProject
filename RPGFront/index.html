@@ -5,8 +5,11 @@
     <title>RPG Project</title>
   </head>
   <body>
-    <div id="lobby">
-      <form class="" action="#" method="post">
+    <div id="start">
+      <input type="button" name="start" value="start game">
+    </div>
+    <div id="lobby" style="display: none;">
+      <form class="" action="" method="post">
         <p>Chose Your character</p>
         <label for="name">Your character's Name</label><br>
         <input type="text" name="name" value="name" placeholder="Enter Your character's Name"><br>
@@ -17,11 +20,7 @@
         <input class="start" type="submit" name="submit" value="submit">
       </form>
     </div>
-    <div id="boardGame" style="display: none;">
-      <p>coucou</p>
-    </div>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
     <script src="./scripts/script.js"></script>
-    <script src="./scripts/creation.js"></script>
   </body>
 </html>
