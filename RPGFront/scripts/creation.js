@@ -1,3 +1,5 @@
+//WORK IN PROGRESS, DOES NOT WORK FOR NOW (the script is not even loaded byt the index.html)
+
 $(document).ready(function() {
   /* set variables */
     var range = $('.input-range'); /* range input */

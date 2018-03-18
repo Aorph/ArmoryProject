@@ -4,6 +4,7 @@ app.use(express.json());
 app.use(express.urlencoded({
   extended: true
 }));
+//Hero class creation
 class Hero {
   constructor(name, hp, atkPoints, defPoints) {
     this.name = name;
@@ -12,9 +13,11 @@ class Hero {
     this.defPoints = defPoints;
   }
 }
+//Initialisation Route
 app.get('/init', function (req, res) {
   res.send(true);
 });
+//Hero creation
 app.post('/create', function (req, res) {
   var newHero = new Hero(req.body.name, req.body.hp, req.body.atkPoints, req.body.defPoints);
   console.log(newHero);
