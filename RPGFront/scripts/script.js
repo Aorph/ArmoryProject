@@ -48,8 +48,10 @@ $(document).ready(function() {
       $.post('http://192.168.33.32:3000/create', {'name': name, 'hp': hp, 'atkPoints': atkPoints, 'defPoints': defPoints, 'botType': botType}).done(function(data) {
         console.log(data);
         document.getElementById('lobby').style.display = "none";
-        document.getElementById('stats').style.display = "flex";
-        $('.stats').html("Name : " + data.name + ' ' + "HP : " + data.hp + ' ' + "Attack Points : " + data.atkPoints + ' ' + "Defense Points : " + data.defPoints);
+        document.getElementById('field').style.display = "flex";
+        $('.player').html("Name : " + data.player.name + ' ' + "HP : " + data.player.hp + ' ' + "Attack Points : " + data.player.atkPoints + ' ' + "Defense Points : " + data.player.defPoints);
+        $('.enemy').html("Name : " + data.enemy.name + ' ' + "HP : " + data.enemy.hp + ' ' + "Attack Points : " + data.enemy.atkPoints + ' ' + "Defense Points : " + data.enemy.defPoints);
+        debugger;
       });
     }
     debugger;

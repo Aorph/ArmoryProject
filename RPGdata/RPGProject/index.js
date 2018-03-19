@@ -29,6 +29,9 @@ app.post('/create', function (req, res) {
     var bot = new Hero("BOT assasin", "100", "150", "0");
   }
   console.log(newHero, bot);
-  res.send(newHero, bot);
+  res.send({
+    player: newHero,
+    enemy: bot,
+  });
 });
 app.listen(3000, () => console.log('Example app listening on port 3000!'));
