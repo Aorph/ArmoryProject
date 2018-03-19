@@ -47,7 +47,9 @@ $(document).ready(function() {
       //Send infos to API to Create Hero
       $.post('http://192.168.33.32:3000/create', {'name': name, 'hp': hp, 'atkPoints': atkPoints, 'defPoints': defPoints, 'botType': botType}).done(function(data) {
         console.log(data);
-        $('body').html("Name : " + data.name + ' ' + "HP : " + data.hp + ' ' + "Attack Points : " + data.atkPoints + ' ' + "Defense Points : " + data.defPoints);
+        document.getElementById('lobby').style.display = "none";
+        document.getElementById('stats').style.display = "flex";
+        $('.stats').html("Name : " + data.name + ' ' + "HP : " + data.hp + ' ' + "Attack Points : " + data.atkPoints + ' ' + "Defense Points : " + data.defPoints);
       });
     }
     debugger;
