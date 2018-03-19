@@ -5,7 +5,7 @@
     <title>RPG Project</title>
   </head>
   <body>
-    <!--Start button DIV-->
+    <!--"Start button" DIV-->
     <div id="start">
       <input type="button" name="start" value="start game">
     </div>
@@ -23,6 +23,14 @@
         <input type="number" id="def" class="def" name="def" value="75" min="0" max="150"><br>
         <input class="start" type="submit" name="submit" value="submit">
       </form>
+      <!--"Choose Bot" Div-->
+      <div class="">
+        <select id="type" name="Bot">
+          <option value="tank">Tank</option>
+          <option value="fighter">Fighter</option>
+          <option value="assasin">Assasin</option>
+        </select>
+      </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
     <script src="./scripts/script.js"></script>
