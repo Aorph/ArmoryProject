@@ -61,9 +61,6 @@ $(document).ready(function() {
         enemy = "Name : " + data.enemy.name + ' ' + "HP : " + data.enemy.hp + ' ' + "Attack Points : " + data.enemy.atkPoints + ' ' + "Defense Points : " + data.enemy.defPoints;
       });
     }
-    $('.player').append(player);
-    $('.enemy').append(enemy);
-    debugger;
   }
   function game() {
     debugger;
