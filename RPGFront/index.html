@@ -11,7 +11,7 @@
     </div>
     <!--"looby" or hero creation DIV-->
     <div id="lobby" style="display: none;">
-      <form class="" action="" method="post">
+      <form class="" method="post">
         <p>Chose Your character</p>
         <label for="name">Your character's Name</label>
         <input type="text" id="name" name="name" value="Martin" placeholder="Enter Your character's Name"><br>
@@ -32,12 +32,16 @@
         </select>
       </div>
     </div>
-    <div id="field">
+    <!--"Battlefield" Div-->
+    <div id="field" style="display: none;">
       <div class="player">
 
       </div>
       <div class="enemy">
 
+      </div>
+      <div class="actions">
+        <input class="attack" type="button" name="Attack" value="Attack">
       </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>

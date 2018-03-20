@@ -4,6 +4,8 @@ var atkPoints;
 var defPoints;
 var totalPoints;
 var botType;
+var player;
+var enemy;
 $(document).ready(function() {
   //IGNORE FOR NOW : DOES NOT WORK //
 
@@ -30,7 +32,13 @@ $(document).ready(function() {
   });
   $('.start').on('click', function() {
     creation();
-  })
+    $('.player').append(player);
+    $('.enemy').append(enemy);
+    debugger;
+    $('.attack').on('click', function() {
+      game();
+    });
+  });
   function creation() {
     //Get Hero stats user entered
     botType = document.getElementById('type').value;
@@ -49,11 +57,15 @@ $(document).ready(function() {
         console.log(data);
         document.getElementById('lobby').style.display = "none";
         document.getElementById('field').style.display = "flex";
-        $('.player').html("Name : " + data.player.name + ' ' + "HP : " + data.player.hp + ' ' + "Attack Points : " + data.player.atkPoints + ' ' + "Defense Points : " + data.player.defPoints);
-        $('.enemy').html("Name : " + data.enemy.name + ' ' + "HP : " + data.enemy.hp + ' ' + "Attack Points : " + data.enemy.atkPoints + ' ' + "Defense Points : " + data.enemy.defPoints);
-        debugger;
+        player = "Name : " + data.player.name + ' ' + "HP : " + data.player.hp + ' ' + "Attack Points : " + data.player.atkPoints + ' ' + "Defense Points : " + data.player.defPoints;
+        enemy = "Name : " + data.enemy.name + ' ' + "HP : " + data.enemy.hp + ' ' + "Attack Points : " + data.enemy.atkPoints + ' ' + "Defense Points : " + data.enemy.defPoints;
       });
     }
+    $('.player').append(player);
+    $('.enemy').append(enemy);
+    debugger;
+  }
+  function game() {
     debugger;
   }
   //$('.start').on('click', game);
