@@ -32,12 +32,9 @@ $(document).ready(function() {
   });
   $('.start').on('click', function() {
     creation();
-    $('.player').append(player);
-    $('.enemy').append(enemy);
-    debugger;
-    $('.attack').on('click', function() {
-      game();
-    });
+  });
+  $('.attack').on('click', function() {
+    game()
   });
   function creation() {
     //Get Hero stats user entered
@@ -61,9 +58,14 @@ $(document).ready(function() {
         enemy = "Name : " + data.enemy.name + ' ' + "HP : " + data.enemy.hp + ' ' + "Attack Points : " + data.enemy.atkPoints + ' ' + "Defense Points : " + data.enemy.defPoints;
       });
     }
+    $('.player').append(player);
+    $('.enemy').append(enemy);
   }
   function game() {
     debugger;
+    $('.attack').on('click', function() {
+      $.post('http://192.168.33.32:3000', )
+    });
   }
   //$('.start').on('click', game);
 });

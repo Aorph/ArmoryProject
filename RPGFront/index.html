@@ -10,19 +10,16 @@
       <input type="button" name="start" value="start game">
     </div>
     <!--"looby" or hero creation DIV-->
-    <div id="lobby" style="display: none;">
-      <form class="" method="post">
-        <p>Chose Your character</p>
-        <label for="name">Your character's Name</label>
-        <input type="text" id="name" name="name" value="Martin" placeholder="Enter Your character's Name"><br>
-        <label for="hp">Health Points</label>
-        <input type="number" id="hp" class="atk" name="atk" value="100" min="0" max="150"><br>
-        <label for="atk">Attack Points</label>
-        <input type="number" id="atk" class="atk" name="atk" value="75" min="0" max="150"><br>
-        <label for="def">Defense Points</label>
-        <input type="number" id="def" class="def" name="def" value="75" min="0" max="150"><br>
-        <input class="start" type="submit" name="submit" value="submit">
-      </form>
+    <div id="lobby" style="display: none;flex-direction: column;">
+      <p>Chose Your character</p>
+      <label for="name">Your character's Name</label>
+      <input type="text" id="name" name="name" value="Martin" placeholder="Enter Your character's Name"><br>
+      <label for="hp">Health Points</label>
+      <input type="number" id="hp" class="atk" name="atk" value="100" min="0" max="150"><br>
+      <label for="atk">Attack Points</label>
+      <input type="number" id="atk" class="atk" name="atk" value="75" min="0" max="150"><br>
+      <label for="def">Defense Points</label>
+      <input type="number" id="def" class="def" name="def" value="75" min="0" max="150"><br>
       <!--"Choose Bot" Div-->
       <div class="">
         <select id="type" name="Bot">
@@ -31,6 +28,8 @@
           <option value="assasin">Assasin</option>
         </select>
       </div>
+      <!--Submit button-->
+      <input class="start" type="submit" name="submit" value="submit">
     </div>
     <!--"Battlefield" Div-->
     <div id="field" style="display: none;">
