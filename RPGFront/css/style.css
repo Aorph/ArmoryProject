@@ -9,10 +9,15 @@ body {
   justify-content: center;
 }
 
+p {
+  font-size: 25px;
+}
+
 .battlefield {
   width: 80%;
   height: 400px;
   display: flex;
+  justify-content: center;
 }
 
 .player {

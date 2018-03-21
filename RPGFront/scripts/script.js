@@ -23,21 +23,31 @@ $(document).ready(function() {
   });*/
 
   //you can stop ignoring now...
-  $('#start').on('click', function() {
+
+  //EvenListener on the "New game" button
+  $('.init').on('click', function() {
     $.get('http://192.168.33.32:3000/init', function(data) {
       //Works only if API responds
       document.getElementById('start').style.display = "none";
       document.getElementById('lobby').style.display = "flex";
     });
   });
-  $('.start').on('click', function() {
-    creation();
+  //EvenListener on the "submit" button
+  $('.submit').on('click', function() {
+    creation(display);
+    function display() {
+      document.getElementById('lobby').style.display = "none";
+      document.getElementById('field').style.display = "flex";
+      console.log("3 " + player, enemy);
+      $('.player').html(player);
+      $('.enemy').html(enemy);
+    }
   });
   $('.attack').on('click', function() {
-    game()
+    game();
   });
   //Hero creation function
-  function creation() {
+  function creation(callback) {
     //Get Hero stats user entered
     botType = document.getElementById('type').value;
     name = document.getElementById('name').value;
@@ -52,20 +62,17 @@ $(document).ready(function() {
     } else {
       //Send infos to API to Create Hero
       $.post('http://192.168.33.32:3000/create', {'name': name, 'hp': hp, 'atkPoints': atkPoints, 'defPoints': defPoints, 'botType': botType}).done(function(data) {
-        document.getElementById('lobby').style.display = "none";
-        document.getElementById('field').style.display = "flex";
         player = "Name : " + data.player.name + ' ' + "HP : " + data.player.hp + ' ' + "Attack Points : " + data.player.atkPoints + ' ' + "Defense Points : " + data.player.defPoints;
         enemy = "Name : " + data.enemy.name + ' ' + "HP : " + data.enemy.hp + ' ' + "Attack Points : " + data.enemy.atkPoints + ' ' + "Defense Points : " + data.enemy.defPoints;
+        callback();
       });
     }
   }
   //game function
   function game() {
-    console.log(player + "////" + enemy);
-    $('.player').html(player);
-    $('.enemy').html(enemy);
+    //debugger;
+    $.post('http://192.168.33.32:3000/attack', );
     debugger;
-    $.post('http://192.168.33.32:3000', )
   }
   //$('.start').on('click', game);
 });

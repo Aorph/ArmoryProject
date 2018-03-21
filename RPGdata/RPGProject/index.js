@@ -31,10 +31,13 @@ app.post('/create', function (req, res) {
   } else {
     bot = new Hero("BOT assasin", "100", "150", "0");
   }
-  console.log(newHero, bot);
+  //console.log(newHero, bot);
   res.send({
     player: newHero,
     enemy: bot,
   });
+});
+app.post('/attack', function (req, res) {
+  console.log('coucou');
 });
 app.listen(3000, () => console.log('Example app listening on port 3000!'));
