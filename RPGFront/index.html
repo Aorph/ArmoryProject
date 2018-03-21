@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>RPG Project</title>
+    <link rel="stylesheet" href="./css/style.css">
   </head>
   <body>
     <!--"Start button" DIV-->
@@ -10,7 +11,7 @@
       <input type="button" name="start" value="start game">
     </div>
     <!--"looby" or hero creation DIV-->
-    <div id="lobby" style="display: none;flex-direction: column;">
+    <div id="lobby">
       <p>Chose Your character</p>
       <label for="name">Your character's Name</label>
       <input type="text" id="name" name="name" value="Martin" placeholder="Enter Your character's Name"><br>
@@ -32,12 +33,17 @@
       <input class="start" type="submit" name="submit" value="submit">
     </div>
     <!--"Battlefield" Div-->
-    <div id="field" style="display: none;">
-      <div class="player">
+    <div id="field">
+      <div class="battlefield">
+        <div class="player">
 
-      </div>
-      <div class="enemy">
+        </div>
+        <div class="middle">
 
+        </div>
+        <div class="enemy">
+
+        </div>
       </div>
       <div class="actions">
         <input class="attack" type="button" name="Attack" value="Attack">

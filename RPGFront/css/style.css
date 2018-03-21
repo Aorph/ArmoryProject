@@ -1,0 +1,58 @@
+html, body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+}
+
+.battlefield {
+  width: 80%;
+  height: 400px;
+  display: flex;
+}
+
+.player {
+  width: 33%;
+  justify-content: flex-start;
+  border: 1px solid black;
+}
+
+.middle {
+  width: 33%;
+  justify-content: center;
+}
+
+
+.enemy {
+  width: 33%;
+  justify-content: flex-end;
+  border: 1px solid black;
+}
+
+#start {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10%;
+  height: 50px;
+}
+
+#lobby {
+  width: 50%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#field {
+  width: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}

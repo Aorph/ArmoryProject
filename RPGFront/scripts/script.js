@@ -36,6 +36,7 @@ $(document).ready(function() {
   $('.attack').on('click', function() {
     game()
   });
+  //Hero creation function
   function creation() {
     //Get Hero stats user entered
     botType = document.getElementById('type').value;
@@ -51,21 +52,20 @@ $(document).ready(function() {
     } else {
       //Send infos to API to Create Hero
       $.post('http://192.168.33.32:3000/create', {'name': name, 'hp': hp, 'atkPoints': atkPoints, 'defPoints': defPoints, 'botType': botType}).done(function(data) {
-        console.log(data);
         document.getElementById('lobby').style.display = "none";
         document.getElementById('field').style.display = "flex";
         player = "Name : " + data.player.name + ' ' + "HP : " + data.player.hp + ' ' + "Attack Points : " + data.player.atkPoints + ' ' + "Defense Points : " + data.player.defPoints;
         enemy = "Name : " + data.enemy.name + ' ' + "HP : " + data.enemy.hp + ' ' + "Attack Points : " + data.enemy.atkPoints + ' ' + "Defense Points : " + data.enemy.defPoints;
       });
     }
-    $('.player').append(player);
-    $('.enemy').append(enemy);
   }
+  //game function
   function game() {
+    console.log(player + "////" + enemy);
+    $('.player').html(player);
+    $('.enemy').html(enemy);
     debugger;
-    $('.attack').on('click', function() {
-      $.post('http://192.168.33.32:3000', )
-    });
+    $.post('http://192.168.33.32:3000', )
   }
   //$('.start').on('click', game);
 });
