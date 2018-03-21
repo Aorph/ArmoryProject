@@ -44,7 +44,7 @@ $(document).ready(function() {
     }
   });
   $('.attack').on('click', function() {
-    game();
+    attack();
   });
   //Hero creation function
   function creation(callback) {
@@ -69,9 +69,9 @@ $(document).ready(function() {
     }
   }
   //game function
-  function game() {
+  function attack() {
     //debugger;
-    $.post('http://192.168.33.32:3000/attack', );
+    $.post('http://192.168.33.32:3000/attack');
     debugger;
   }
   //$('.start').on('click', game);

@@ -7,6 +7,8 @@ app.use(express.urlencoded({
 //var assignation
 var newHero;
 var bot;
+var heroHP;
+var botHP;
 //Hero class creation
 class Hero {
   constructor(name, hp, atkPoints, defPoints) {
@@ -39,5 +41,7 @@ app.post('/create', function (req, res) {
 });
 app.post('/attack', function (req, res) {
   console.log('coucou');
+  var botHP = bot.hp;
+  console.log(botHP);
 });
 app.listen(3000, () => console.log('Example app listening on port 3000!'));
